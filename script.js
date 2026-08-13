@@ -1,3 +1,4 @@
+console.log("MAP JS LOADED");
 function changeMap(link) {
 
     alert(link);
