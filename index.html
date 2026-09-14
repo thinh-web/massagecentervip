@@ -11,6 +11,67 @@
 
   gtag('config', 'AW-18377772107');
 </script>
+
+<!-- setup thời gian cho sđt -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Lấy giờ Việt Nam
+    const parts = new Intl.DateTimeFormat("en-US", {
+        timeZone: "Asia/Ho_Chi_Minh",
+        hour: "2-digit",
+        minute: "2-digit",
+        hourCycle: "h23"
+    }).formatToParts(new Date());
+
+    const hour = Number(
+        parts.find(p => p.type === "hour").value
+    );
+
+    const minute = Number(
+        parts.find(p => p.type === "minute").value
+    );
+
+    // Tổng số phút trong ngày
+    const currentMinutes = hour * 60 + minute;
+
+    // ===== THỜI GIAN TEST =====
+    // Test từ 02:43 → 08:00
+    const startTime = 1 * 60 + 05;
+    const endTime = 8 * 60;
+
+    let phoneNumber;
+
+    if (currentMinutes >= startTime && currentMinutes <= endTime) {
+
+        // 02:43 → 08:00
+        phoneNumber = "84962343505";
+
+    } else {
+
+        // 08:01 → 02:42
+        phoneNumber = "84898194131";
+
+    }
+
+    // Đổi tất cả link WhatsApp
+    document.querySelectorAll(".whatsapp-link").forEach(function(link) {
+        link.href = "https://wa.me/" + phoneNumber;
+    });
+
+    // Kiểm tra trong Console
+    console.log("Giờ Việt Nam:", 
+        hour + ":" + String(minute).padStart(2, "0")
+    );
+
+    console.log("Số WhatsApp:", phoneNumber);
+
+});
+</script>
+ <!--hết setup thời gian cho sđt-->
+
+ 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="stylesheet" href="style.css">
@@ -140,7 +201,7 @@ footer{
 Relax • VIP Service • Professional Therapists • Available 24/7
 </p>
 
-<a class="btn" href="https://wa.me/+84962343505">
+<a class="btn whatsapp-link" href="https://wa.me/84898194131" target="_blank">
 Book via WhatsApp
 </a>
 
@@ -157,35 +218,35 @@ Book via WhatsApp
  
    <div class="cards">
       <div class="therapist-card">
-          <a href="https://wa.me/+84962343505" target="_blank">
+         <a class="whatsapp-link" href="https://wa.me/84898194131" target="_blank">
          <img src="anh 26.jpg" alt="Sophia">
           </a>
          <h3>Sophia</h3>
          <p>Professional Massage Therapist</p>
       </div>
       <div class="therapist-card">
-         <a href="https://wa.me/+84962343505" target="_blank">
-         <img src="anh 28.jpg" alt="Emma">
+         <a class="whatsapp-link" href="https://wa.me/84898194131" target="_blank">
+         <img src="anh100.jpg" alt="Emma">
          </a>
          <h3>Emma</h3>
          <p>VIP Massage Specialist</p>
      </div>
      <div class="therapist-card">
-         <a href="https://wa.me/+84962343505" target="_blank">
+         <a class="whatsapp-link" href="https://wa.me/84898194131" target="_blank">
          <img src="images/anh 3.jpg" alt="Olivia">
          </a>
          <h3>Olivia</h3>
          <p>Luxury Massage</p>
      </div>
      <div class="therapist-card">
-         <a href="https://wa.me/+84962343505" target="_blank">
+         <a class="whatsapp-link" href="https://wa.me/84898194131" target="_blank">
          <img src="anh 29.jpeg" alt="Yenovkian">
          </a>
          <h3>Yenovkian</h3>
          <p>Luxury Massage</p>
      </div>
      <div class="therapist-card">
-         <a href="https://wa.me/+84962343505" target="_blank">
+         <a class="whatsapp-link" href="https://wa.me/84898194131" target="_blank">
          <img src="images/anh11.jpg" alt="Róse">
          </a>
          <h3>Róse</h3>
@@ -193,21 +254,21 @@ Book via WhatsApp
      </div>
 
      <div class="therapist-card">
-         <a href="https://wa.me/+84962343505" target="_blank">
+         <a class="whatsapp-link" href="https://wa.me/84898194131" target="_blank">
          <img src="images/anh12.jpg" alt="Catherine">
          </a>
          <h3>Catherine</h3>
          <p>Professional Massage Therapist</p>
       </div>
       <div class="therapist-card">
-         <a href="https://wa.me/+84962343505" target="_blank">
+         <a class="whatsapp-link" href="https://wa.me/84898194131" target="_blank">
          <img src="images/anh10.jpeg" alt="Emma">
          </a>
          <h3>Emma</h3>
          <p>VIP Massage Specialist</p>
      </div>
      <div class="therapist-card">
-         <a href="https://wa.me/+84962343505" target="_blank">
+         <a class="whatsapp-link" href="https://wa.me/84898194131" target="_blank">
          <img src="images/anh13.jpg" alt="Kyle">
          </a>
          <h3>Kyle</h3>
@@ -216,28 +277,28 @@ Book via WhatsApp
     
 
      <div class="therapist-card">
-         <a href="https://wa.me/+84962343505" target="_blank">
+         <a class="whatsapp-link" href="https://wa.me/84898194131" target="_blank">
          <img src="images/anh16.jpg" alt="Hương">
          </a>
          <h3>Hương</h3>
          <p>VIP Massage Specialist</p>
      </div>
      <div class="therapist-card">
-         <a href="https://wa.me/+84962343505" target="_blank">
+         <a class="whatsapp-link" href="https://wa.me/84898194131" target="_blank">
          <img src="images/anh15.jpg" alt="Sora">
          </a>
          <h3>Sora</h3>
          <p>Luxury Massage</p>
      </div>
      <div class="therapist-card">
-         <a href="https://wa.me/+84962343505" target="_blank">
+         <a class="whatsapp-link" href="https://wa.me/84898194131" target="_blank">
          <img src="anh 33.jpg" alt="Anna">
          </a>
          <h3>Anna</h3>
          <p>Luxury Massage</p>
      </div>
      <div class="therapist-card">
-         <a href="https://wa.me/+84962343505" target="_blank">
+         <a class="whatsapp-link" href="https://wa.me/84898194131" target="_blank">
          <img src="anh 34.jpg" alt="Jennie">
          </a>
          <h3>IvannoChka</h3>
@@ -255,7 +316,7 @@ Book via WhatsApp
 <div class="cards">
 
   <div class="therapist-card">
-    <a href="https://wa.me/+84962343505" target="_blank">
+    <a class="whatsapp-link" href="https://wa.me/84898194131" target="_blank">
     <img src="images/anhmassagerelax.jpg"> 
     </a>
     <h3>Relax Massage</h3>
@@ -263,7 +324,7 @@ Book via WhatsApp
   </div>
 
   <div class="therapist-card">
-    <a href="https://wa.me/+84962343505" target="_blank">
+    <a class="whatsapp-link" href="https://wa.me/84898194131" target="_blank">
     <img src="images/anhvip.jpg">
     </a>
     <h3>VIP Massage</h3>
@@ -271,7 +332,7 @@ Book via WhatsApp
   </div>
 
   <div class="therapist-card">
-    <a href="https://wa.me/+84962343505" target="_blank">
+    <a class="whatsapp-link" href="https://wa.me/84898194131" target="_blank">
     <img src="images/anhhotel.jpg">
     </a>
     <h3>Hotel Service</h3>
@@ -398,8 +459,7 @@ Book via WhatsApp
 
 </footer>
 
-<a class="whatsapp"
-href="https://wa.me/+84962343505">
+<a class="whatsapp-link" href="https://wa.me/84898194131" target="_blank">
 💬
 </a>
 <script src="script.js"></script>
