@@ -37,20 +37,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const currentMinutes = hour * 60 + minute;
 
     // ===== THỜI GIAN TEST =====
-    // Test từ 02:43 → 08:00
-    const startTime = 1 * 60 + 05;
-    const endTime = 8 * 60;
+    // Test từ 0 → 07:00
+    const startTime = 0;
+    const endTime = 7 * 60;
 
     let phoneNumber;
 
     if (currentMinutes >= startTime && currentMinutes <= endTime) {
 
-        // 02:43 → 08:00
+        // 00 → 07:00
         phoneNumber = "84962343505";
 
     } else {
 
-        // 08:01 → 02:42
+        // 07:01 → 23:59
         phoneNumber = "84898194131";
 
     }
