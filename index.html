@@ -37,22 +37,17 @@ document.addEventListener("DOMContentLoaded", function () {
     const currentMinutes = hour * 60 + minute;
 
     // ===== THỜI GIAN TEST =====
-    // Test từ 0 → 07:00
-    const startTime = 20 *60 + 5;
-    const endTime = 6 * 60;
-
+    const startTime = 20 * 60 + 5; // 20:05
+    const endTime = 6 * 60;        // 06:00
+    
     let phoneNumber;
-
-    if (currentMinutes >= startTime && currentMinutes <= endTime) {
-
-        // 00 → 07:00
+    
+    if (currentMinutes >= startTime || currentMinutes <= endTime) {
+        // 20:05 → 06:00 hôm sau
         phoneNumber = "84338723933";
-
     } else {
-
-        // 07:01 → 23:59
+        // 06:01 → 20:04
         phoneNumber = "84898194131";
-
     }
 
     // Đổi tất cả link WhatsApp
